@@ -5,7 +5,7 @@ export default function useReveal(deps = []) {
   useEffect(() => {
     let io
     const raf = requestAnimationFrame(() => {
-      const els = document.querySelectorAll('.reveal:not(.is-visible)')
+      const els = document.querySelectorAll('.reveal:not(.is-visible), .reveal-left:not(.is-visible), .reveal-right:not(.is-visible), .reveal-scale:not(.is-visible), .clip-reveal:not(.is-visible)')
       if (!('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('is-visible')); return }
       io = new IntersectionObserver((entries) => {
         entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target) } })

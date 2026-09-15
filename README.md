@@ -38,3 +38,9 @@ npm start
 
 ## Brand
 Colours are taken from the logo: dark green `#688948`, light green `#b4c2a2`, wordmark grey `#827e79`, logo background `#f6f6f6`.
+
+## Photos and video (optional)
+The design works without any photos, but looks best with them. Drop files here and they are picked up automatically:
+- `public/media/hero.mp4` full width background video for the home hero (keep it short, muted, around 10 to 20 seconds, under 8 MB). `public/img/hero.jpg` is used as the still image / poster.
+- `public/img/services/<name>.jpg` background photo for each service tile on the home page: `calculator.jpg` (Tax Advisory), `file-check.jpg` (Audit), `trending-up.jpg` (Tax Compliance), `book-open.jpg` (Accounting), `receipt.jpg` (VAT), `users.jpg` (Payroll), `building.jpg` (Company Formation), `briefcase.jpg` (Business Advisory), `plane.jpg` (Relocation). Landscape, around 1200 x 900 px.
+Missing files fall back to the green gradients you see now.

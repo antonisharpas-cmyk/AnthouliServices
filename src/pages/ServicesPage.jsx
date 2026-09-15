@@ -1,10 +1,11 @@
 import Services from '../components/Services'
-import PageShell from '../components/PageShell'
+import CtaBand from '../components/CtaBand'
 
 export default function ServicesPage() {
   return (
-    <PageShell>
+    <>
       <Services />
-    </PageShell>
+      <CtaBand />
+    </>
   )
 }

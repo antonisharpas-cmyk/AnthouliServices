@@ -9,7 +9,7 @@
     "services": "Our Services",
     "whyUs": "Why Us",
     "whyCyprus": "Why Cyprus",
-    "careers": "Careers",
+    "careers": "Join Us",
     "contact": "Contact",
     "cta": "Book a consultation",
     "menu": "Menu",
@@ -318,7 +318,7 @@
     "ctaButton": "Discuss your plans with us"
   },
   "careers": {
-    "eyebrow": "Careers",
+    "eyebrow": "Join Us",
     "title": "Build your career with us",
     "intro": "We are always glad to hear from talented professionals and graduates, whether you are a qualified auditor, a tax specialist or a trainee starting your ACA or ACCA journey.",
     "perksTitle": "What we offer",
@@ -432,5 +432,10 @@
     "callOffice": "Office",
     "callMobile": "Mobile",
     "callChoose": "Choose a number"
+  },
+  "cta": {
+    "title": "Contact our team to explore how we can contribute to your success",
+    "button": "Get in touch",
+    "eyebrow": "Let us work together"
   }
 }

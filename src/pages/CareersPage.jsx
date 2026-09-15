@@ -1,10 +1,11 @@
 import Careers from '../components/Careers'
-import PageShell from '../components/PageShell'
+import CtaBand from '../components/CtaBand'
 
 export default function CareersPage() {
   return (
-    <PageShell>
+    <>
       <Careers />
-    </PageShell>
+      <CtaBand />
+    </>
   )
 }

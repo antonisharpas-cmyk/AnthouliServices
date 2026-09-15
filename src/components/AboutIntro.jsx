@@ -12,7 +12,7 @@ export default function AboutIntro() {
         <div className="lg:col-span-5">
           <SectionHeading eyebrow={t('about.eyebrow')} title={t('about.title')} align="left" />
         </div>
-        <div className="reveal lg:col-span-7">
+        <div className="reveal-right lg:col-span-7">
           <p className="lead">{t('about.p1')}</p>
           <p className="lead mt-5">{t('about.p2')}</p>
           <Link to="/about" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-brand-800">

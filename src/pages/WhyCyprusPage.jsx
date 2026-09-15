@@ -1,10 +1,11 @@
 import WhyCyprus from '../components/WhyCyprus'
-import PageShell from '../components/PageShell'
+import CtaBand from '../components/CtaBand'
 
 export default function WhyCyprusPage() {
   return (
-    <PageShell>
+    <>
       <WhyCyprus />
-    </PageShell>
+      <CtaBand />
+    </>
   )
 }

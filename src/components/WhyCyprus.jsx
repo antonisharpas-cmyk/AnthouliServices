@@ -4,6 +4,7 @@ import { Check, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SectionHeading from './SectionHeading'
 import Icon from './Icon'
+import CountUp from './CountUp'
 
 export default function WhyCyprus() {
   const { t } = useTranslation()
@@ -13,20 +14,20 @@ export default function WhyCyprus() {
   const active = Array.isArray(categories) ? categories[activeIdx] || categories[0] : null
 
   return (
-    <section id="why-cyprus" className="section relative overflow-hidden bg-brand-900 text-white">
+    <section id="why-cyprus" className="relative overflow-hidden bg-brand-900 pt-36 pb-20 text-white lg:pt-44 lg:pb-28">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute -right-24 top-10 h-[36rem] w-[36rem] rounded-full bg-brand-700/40 blur-3xl" />
         <div className="absolute -left-32 bottom-0 h-[28rem] w-[28rem] rounded-full bg-brand-500/20 blur-3xl" />
       </div>
 
       <div className="container-x relative">
-        <SectionHeading eyebrow={t('whyCyprus.eyebrow')} title={t('whyCyprus.title')} intro={t('whyCyprus.intro')} light />
+        <SectionHeading eyebrow={t('whyCyprus.eyebrow')} title={t('whyCyprus.title')} intro={t('whyCyprus.intro')} light words />
 
         {/* key figures */}
         <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
           {Array.isArray(figures) && figures.map((f, i) => (
             <div key={f.label} className="reveal rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm" style={{ transitionDelay: `${i * 50}ms` }}>
-              <div className="font-display text-3xl font-semibold text-brand-200">{f.value}</div>
+              <div className="font-display text-3xl font-semibold text-brand-200"><CountUp value={f.value} /></div>
               <div className="mt-2 text-xs leading-snug text-brand-100/90">{f.label}</div>
             </div>
           ))}
