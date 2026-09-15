@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-white text-stone-700 antialiased font-sans; }
+  ::selection { @apply bg-brand-300 text-brand-950; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-[84rem] px-5 sm:px-8 lg:px-10; }
+  .section { @apply py-20 lg:py-28; }
+  .eyebrow { @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand-600; }
+  .eyebrow::before { content: ''; @apply block h-px w-8 bg-brand-500; }
+  .h2 { @apply font-display text-3xl font-semibold leading-tight text-stone-900 sm:text-4xl lg:text-[2.75rem]; }
+  .lead { @apply text-lg leading-relaxed text-stone-600; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200; }
+  .btn-primary { @apply btn bg-brand-500 text-white hover:bg-brand-600 hover:shadow-cardHover; }
+  .btn-outline { @apply btn border border-stone-300 text-stone-800 hover:border-brand-500 hover:text-brand-700; }
+  .btn-light { @apply btn bg-white text-brand-800 hover:bg-brand-50; }
+  .card { @apply rounded-2xl border border-stone-200/80 bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-cardHover; }
+  .input { @apply w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-sm text-stone-800 placeholder:text-stone-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200; }
+  .nav-link { @apply text-sm font-medium text-stone-600 transition-colors hover:text-brand-700; }
+}
+
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
