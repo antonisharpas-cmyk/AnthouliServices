@@ -29,14 +29,14 @@ export default function Navbar() {
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled || open ? 'bg-white/95 shadow-[0_1px_0_rgba(0,0,0,0.06)] backdrop-blur' : 'bg-white/80 backdrop-blur-sm'}`}>
-      <div className="container-x flex h-20 items-center justify-between gap-6">
+      <div className="container-x flex h-20 items-center justify-between gap-3 sm:gap-6">
         <Link to="/" className="flex shrink-0 items-center" aria-label={SITE.name}>
-          <img src="/logo.png" alt={SITE.name} className="h-10 w-auto sm:h-11" />
+          <img src="/logo.png" alt={SITE.name} className="h-9 w-auto sm:h-11" />
         </Link>
 
         <nav className="hidden items-center gap-5 xl:gap-7 lg:flex" aria-label="Main">
           {NAV.map((n) => (
-            <NavLink key={n.key} to={n.path} end={n.path === '/'} className={linkCls}>
+            <NavLink key={n.key} to={n.path} end={n.path === '/'} className={linkCls} onClick={() => { if (pathname === n.path) window.scrollTo({ top: 0, behavior: 'smooth' }) }}>
               {t(`nav.${n.key}`)}
             </NavLink>
           ))}
@@ -47,15 +47,18 @@ export default function Navbar() {
           <Link to="/contact" className="btn-primary whitespace-nowrap !px-5 !py-2.5">{t('nav.cta')}</Link>
         </div>
 
-        <button
+        <div className="flex shrink-0 items-center gap-2 lg:hidden">
+          <LanguageSwitcher compact />
+          <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-stone-200 text-stone-700 lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-stone-200 text-stone-700"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label={open ? t('nav.close') : t('nav.menu')}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -66,13 +69,13 @@ export default function Navbar() {
               key={n.key}
               to={n.path}
               end={n.path === '/'}
+              onClick={() => { setOpen(false); if (pathname === n.path) window.scrollTo({ top: 0, behavior: 'smooth' }) }}
               className={({ isActive }) => `rounded-xl px-3 py-3 text-base font-medium hover:bg-brand-50 hover:text-brand-700 ${isActive ? 'text-brand-700' : 'text-stone-800'}`}
             >
               {t(`nav.${n.key}`)}
             </NavLink>
           ))}
-          <div className="mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-stone-100 pt-4">
-            <LanguageSwitcher />
+          <div className="mt-3 flex flex-wrap items-center justify-end gap-3 border-t border-stone-100 pt-4">
             <a href={`tel:${SITE.phone}`} className="btn-outline !py-2.5">
               <Phone className="h-4 w-4" /> {SITE.phoneDisplay}
             </a>

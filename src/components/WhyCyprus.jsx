@@ -79,25 +79,44 @@ export default function WhyCyprus() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:hidden">
-          {Array.isArray(categories) && categories.map((c) => (
-            <div key={c.title} className="reveal rounded-3xl bg-white p-6 text-stone-800">
+        {/* mobile: scrollable category chips + one panel */}
+        <div className="reveal mt-12 lg:hidden">
+          <div className="-mx-5 overflow-x-auto px-5 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8">
+            <div className="flex w-max gap-2">
+              {Array.isArray(categories) && categories.map((c, i) => (
+                <button
+                  key={c.title}
+                  type="button"
+                  onClick={() => setActiveIdx(i)}
+                  aria-pressed={i === activeIdx}
+                  className={`inline-flex items-center gap-2 whitespace-nowrap rounded-full px-4 py-2.5 text-sm font-semibold transition-all ${
+                    i === activeIdx ? 'bg-white text-brand-900 shadow-cardHover' : 'bg-white/10 text-brand-50 hover:bg-white/15'
+                  }`}
+                >
+                  <Icon name={c.icon} className="h-4 w-4" />
+                  {c.title}
+                </button>
+              ))}
+            </div>
+          </div>
+          {active && (
+            <div key={active.title} className="mt-4 rounded-3xl bg-white p-6 text-stone-800 shadow-cardHover animate-fadeUp">
               <div className="flex items-center gap-3">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
-                  <Icon name={c.icon} className="h-5 w-5" />
+                  <Icon name={active.icon} className="h-5 w-5" />
                 </span>
-                <h3 className="font-display text-lg font-semibold text-stone-900">{c.title}</h3>
+                <h3 className="font-display text-lg font-semibold text-stone-900">{active.title}</h3>
               </div>
-              <ul className="mt-4 space-y-2.5">
-                {c.points.map((p) => (
-                  <li key={p} className="flex items-start gap-2.5 text-sm leading-relaxed text-stone-700">
+              <ul className="mt-5 space-y-2.5">
+                {active.points.map((p) => (
+                  <li key={p} className="flex items-start gap-2.5 rounded-xl bg-[#f6f6f6] px-4 py-3 text-sm leading-relaxed text-stone-700">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" strokeWidth={2.5} />
                     <span>{p}</span>
                   </li>
                 ))}
               </ul>
             </div>
-          ))}
+          )}
         </div>
 
         <p className="reveal mx-auto mt-10 max-w-3xl text-center text-xs leading-relaxed text-brand-200/80">{t('whyCyprus.disclaimer')}</p>

@@ -45,7 +45,7 @@ export default function About() {
               <span className="eyebrow">{t('about.teamEyebrow')}</span>
               <h3 className="h2 mt-4 !text-3xl lg:!text-4xl">{t('about.teamTitle')}</h3>
               <p className="lead mt-5">{t('about.teamText')}</p>
-              <Link to="/careers" className="btn-primary mt-7">
+              <Link to="/careers" className="btn-primary mt-7 hidden lg:inline-flex">
                 {t('about.teamNote')} <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -65,6 +65,11 @@ export default function About() {
                 <p className="mt-5 text-sm leading-relaxed text-stone-600">{m.bio}</p>
               </article>
             ))}
+          </div>
+          <div className="reveal lg:hidden">
+            <Link to="/careers" className="btn-primary w-full text-center">
+              {t('about.teamNote')} <ArrowRight className="h-4 w-4 shrink-0" />
+            </Link>
           </div>
         </div>
       </div>

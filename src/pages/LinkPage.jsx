@@ -6,7 +6,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher'
 
 // Hidden "link in bio" page at /link. Not in the navigation.
 export default function LinkPage() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [showCall, setShowCall] = useState(false)
 
   useEffect(() => {
@@ -62,12 +62,12 @@ export default function LinkPage() {
             const external = l.href?.startsWith('http')
             const cls = 'group flex w-full items-center justify-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-6 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-white backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-300/70 hover:bg-white/[0.12] hover:shadow-[0_12px_30px_rgba(104,137,72,0.35)]'
             return (
-              <li key={l.label} className="animate-fadeUp" style={{ animationDelay: `${140 + i * 70}ms` }}>
+              <li key={`${i18n.language}-${i}`} className="animate-fadeUp" style={{ animationDelay: `${140 + i * 70}ms` }}>
                 {l.action ? (
                   <>
                     <button type="button" onClick={l.action} aria-expanded={showCall} className={`${cls} ${showCall ? 'border-brand-300/70 bg-white/[0.12]' : ''}`}>
-                      <Ic className="h-5 w-5 text-brand-200 transition-colors group-hover:text-white" strokeWidth={1.75} />
-                      {l.label}
+                      <Ic className="h-5 w-5 shrink-0 text-brand-200 transition-colors group-hover:text-white" strokeWidth={1.75} />
+                      <span className="text-center leading-snug">{l.label}</span>
                     </button>
                     {showCall && (
                       <div className="mt-3 grid gap-2.5 rounded-3xl border border-white/10 bg-white/[0.04] p-3 animate-fadeUp [animation-duration:220ms]">
@@ -85,8 +85,8 @@ export default function LinkPage() {
                   </>
                 ) : (
                   <a href={l.href} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined} className={cls}>
-                    <Ic className="h-5 w-5 text-brand-200 transition-colors group-hover:text-white" strokeWidth={1.75} />
-                    {l.label}
+                    <Ic className="h-5 w-5 shrink-0 text-brand-200 transition-colors group-hover:text-white" strokeWidth={1.75} />
+                    <span className="text-center leading-snug">{l.label}</span>
                   </a>
                 )}
               </li>
