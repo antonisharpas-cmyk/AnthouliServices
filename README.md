@@ -7,18 +7,26 @@ Built with React, Vite, Tailwind CSS and react-i18next. Served in production by 
 English (default), Greek and Russian. All copy lives in `src/locales/{en,el,ru}.json`.
 The visitor's choice is remembered in localStorage.
 
-## Sections
-Hero, About Us (with team), Services (9 service cards), Why Choose Us, Why Cyprus, Careers (with application form), Contact (with map) and Footer.
-Section ids: `about`, `services`, `why-us`, `why-cyprus`, `careers`, `contact`.
+## Pages (React Router)
+- `/` Home: hero, short About, services overview, Why Choose Us
+- `/about` About Us, values, team, Why Choose Us
+- `/services` full breakdown of the 9 service lines
+- `/why-cyprus` Why Cyprus
+- `/careers` Careers with application form (CV upload required)
+- `/contact` Contact details, form and map
+- `/link` hidden "link in bio" page (not in the navigation)
 
 ## Forms
-Both forms open the visitor's email app with a prefilled message to info@anthouli.com (no backend needed).
-To change the address, edit `src/data/site.js`.
+Both forms post to the Node server (`/api/contact` and `/api/apply`), which emails them to `MAIL_TO` using the SMTP settings in `.env` (copy `.env.example`).
+Without SMTP settings the server logs submissions to the console in development and returns an error in production.
+The careers form requires a CV (PDF, Word, ODT, RTF or TXT, up to 5 MB) and will not submit until every required field is filled.
+Contact details live in `src/data/site.js`.
 
 ## Run locally
 ```
 npm install
-npm run dev
+npm run dev          # Vite on http://localhost:5173 (proxies /api to the Node server)
+npm run dev:server   # in a second terminal: Node server on http://localhost:3000 for the forms
 ```
 
 ## Production

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Check, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import SectionHeading from './SectionHeading'
 import Icon from './Icon'
 
@@ -103,9 +104,9 @@ export default function WhyCyprus() {
 
         <div className="reveal mt-10 flex flex-col items-center justify-between gap-5 rounded-2xl border border-white/10 bg-white/5 px-8 py-8 sm:flex-row">
           <p className="font-display text-xl font-semibold">{t('whyCyprus.cta')}</p>
-          <a href="#contact" className="btn-light">
+          <Link to="/contact" className="btn-light">
             {t('whyCyprus.ctaButton')} <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

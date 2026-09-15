@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
-import { ShieldCheck, Target, Handshake, MessageSquare, User, ArrowRight } from 'lucide-react'
+import { ShieldCheck, Target, Handshake, MessageSquare, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import SectionHeading from './SectionHeading'
 
 const VALUE_ICONS = [ShieldCheck, Target, Handshake, MessageSquare]
@@ -44,17 +45,17 @@ export default function About() {
               <span className="eyebrow">{t('about.teamEyebrow')}</span>
               <h3 className="h2 mt-4 !text-3xl lg:!text-4xl">{t('about.teamTitle')}</h3>
               <p className="lead mt-5">{t('about.teamText')}</p>
-              <a href="#careers" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-brand-800">
+              <Link to="/careers" className="btn-primary mt-7">
                 {t('about.teamNote')} <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:col-span-7">
             {Array.isArray(team) && team.map((m, i) => (
               <article key={m.name} className="reveal card flex flex-col" style={{ transitionDelay: `${i * 80}ms` }}>
                 <div className="flex items-center gap-4">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-300 to-brand-500 text-white shadow-card">
-                    <User className="h-8 w-8" strokeWidth={1.5} />
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-400 to-brand-600 font-display text-xl font-semibold tracking-wide text-white shadow-card" aria-hidden="true">
+                    {m.name.split(/\s+/).map((w) => w[0]).slice(0, 2).join('')}
                   </div>
                   <div>
                     <h4 className="font-display text-xl font-semibold text-stone-900">{m.name}</h4>

@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
-import { ArrowRight, ChevronDown } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export default function Hero() {
   const { t } = useTranslation()
@@ -35,10 +36,10 @@ export default function Hero() {
             {t('hero.subtitle')}
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-3 animate-fadeUp [animation-delay:240ms]">
-            <a href="#services" className="btn-primary">
+            <Link to="/services" className="btn-primary">
               {t('hero.ctaPrimary')} <ArrowRight className="h-4 w-4" />
-            </a>
-            <a href="#contact" className="btn-outline">{t('hero.ctaSecondary')}</a>
+            </Link>
+            <Link to="/contact" className="btn-outline">{t('hero.ctaSecondary')}</Link>
           </div>
         </div>
 
@@ -71,9 +72,6 @@ export default function Hero() {
         </dl>
       </div>
 
-      <a href="#about" className="mt-12 hidden items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-stone-400 hover:text-brand-600 lg:flex">
-        {t('hero.scroll')} <ChevronDown className="h-4 w-4 animate-bounce" />
-      </a>
     </section>
   )
 }

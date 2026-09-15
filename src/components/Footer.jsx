@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
-import { Instagram, Facebook, ArrowUp, MapPin, Phone, Mail } from 'lucide-react'
-import { NAV_SECTIONS, SECTION_IDS, SITE } from '../data/site'
+import { Instagram, Facebook, MapPin, Phone, Mail } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { NAV, SITE } from '../data/site'
 
 export default function Footer() {
   const { t } = useTranslation()
@@ -26,8 +27,8 @@ export default function Footer() {
         <div className="lg:col-span-2">
           <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-white">{t('footer.quickLinks')}</h4>
           <ul className="mt-5 space-y-2.5 text-sm">
-            {NAV_SECTIONS.map((key) => (
-              <li key={key}><a href={`#${SECTION_IDS[key]}`} className="hover:text-brand-300">{t(`nav.${key}`)}</a></li>
+            {NAV.map((n) => (
+              <li key={n.key}><Link to={n.path} className="hover:text-brand-300">{t(`nav.${n.key}`)}</Link></li>
             ))}
           </ul>
         </div>
@@ -36,7 +37,7 @@ export default function Footer() {
           <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-white">{t('footer.servicesTitle')}</h4>
           <ul className="mt-5 space-y-2.5 text-sm">
             {Array.isArray(services) && services.slice(0, 7).map((s) => (
-              <li key={s.title}><a href="#services" className="hover:text-brand-300">{s.title}</a></li>
+              <li key={s.title}><Link to="/services" className="hover:text-brand-300">{s.title}</Link></li>
             ))}
           </ul>
         </div>
@@ -52,14 +53,11 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-stone-800">
-        <div className="container-x flex flex-col items-start justify-between gap-4 py-6 text-xs text-stone-500 sm:flex-row sm:items-center">
+        <div className="container-x py-6 text-xs text-stone-500">
           <div>
             <p>© {year} {SITE.name}. {t('footer.rights')}</p>
             <p className="mt-1">{t('footer.regulated')}</p>
           </div>
-          <a href="#top" className="inline-flex items-center gap-2 rounded-full border border-stone-700 px-4 py-2 text-stone-300 transition-colors hover:border-brand-300 hover:text-brand-300">
-            {t('footer.top')} <ArrowUp className="h-3.5 w-3.5" />
-          </a>
         </div>
       </div>
     </footer>

@@ -6,7 +6,7 @@
   "nav": {
     "home": "Home",
     "about": "About Us",
-    "services": "Services",
+    "services": "Our Services",
     "whyUs": "Why Us",
     "whyCyprus": "Why Cyprus",
     "careers": "Careers",
@@ -23,12 +23,23 @@
     "ctaPrimary": "Explore our services",
     "ctaSecondary": "Talk to us",
     "stats": [
-      { "value": "15%", "label": "Cyprus corporate tax rate" },
-      { "value": "65+", "label": "Double tax treaties" },
-      { "value": "IFRS", "label": "Reporting standard" },
-      { "value": "3", "label": "Languages spoken" }
-    ],
-    "scroll": "Scroll"
+      {
+        "value": "15%",
+        "label": "Cyprus corporate tax rate"
+      },
+      {
+        "value": "65+",
+        "label": "Double tax treaties"
+      },
+      {
+        "value": "IFRS",
+        "label": "Reporting standard"
+      },
+      {
+        "value": "3",
+        "label": "Languages spoken"
+      }
+    ]
   },
   "about": {
     "eyebrow": "About Us",
@@ -36,10 +47,22 @@
     "p1": "C. Anthouli Ltd is a trusted provider of professional services specialising in tax advisory, audit and compliance solutions. From our offices in Larnaca we serve national and international corporations, family businesses and individuals with dedication to excellence and integrity.",
     "p2": "Our mission is to deliver bespoke, high quality services that go beyond numbers, providing strategic insights and ensuring regulatory compliance while building lasting partnerships with our clients.",
     "values": [
-      { "title": "Integrity", "text": "Independent, objective and transparent in everything we sign our name to." },
-      { "title": "Precision", "text": "Rigorous technical work, reviewed by senior professionals before it reaches you." },
-      { "title": "Partnership", "text": "We take time to understand your business, so our advice fits your goals and not a template." },
-      { "title": "Responsiveness", "text": "Direct access to the people doing the work, with clear answers when you need them." }
+      {
+        "title": "Integrity",
+        "text": "Independent, objective and transparent in everything we sign our name to."
+      },
+      {
+        "title": "Precision",
+        "text": "Rigorous technical work, reviewed by senior professionals before it reaches you."
+      },
+      {
+        "title": "Partnership",
+        "text": "We take time to understand your business, so our advice fits your goals and not a template."
+      },
+      {
+        "title": "Responsiveness",
+        "text": "Direct access to the people doing the work, with clear answers when you need them."
+      }
     ],
     "teamEyebrow": "Our Team",
     "teamTitle": "Led by experienced professionals, supported by a dedicated team",
@@ -67,55 +90,91 @@
         "icon": "calculator",
         "title": "Tax Advisory",
         "text": "Strategic tax planning and advisory services to optimise your tax position and ensure compliance with local and international regulations.",
-        "points": ["Corporate and personal tax planning", "International structuring and holding regimes", "Tax rulings and opinions"]
+        "points": [
+          "Corporate and personal tax planning",
+          "International structuring and holding regimes",
+          "Tax rulings and opinions"
+        ]
       },
       {
         "icon": "file-check",
         "title": "Audit and Assurance",
         "text": "Comprehensive audit services providing independent assurance and insights to enhance stakeholder confidence and business performance.",
-        "points": ["Statutory audits under IFRS", "Group and consolidated audits", "Agreed upon procedures and reviews"]
+        "points": [
+          "Statutory audits under IFRS",
+          "Group and consolidated audits",
+          "Agreed upon procedures and reviews"
+        ]
       },
       {
         "icon": "trending-up",
         "title": "Tax Compliance",
         "text": "Complete tax compliance services ensuring timely and accurate filings while minimising risks and maintaining regulatory adherence.",
-        "points": ["Corporate and personal income tax returns", "Provisional tax and SDC", "Tax authority correspondence"]
+        "points": [
+          "Corporate and personal income tax returns",
+          "Provisional tax and SDC",
+          "Tax authority correspondence"
+        ]
       },
       {
         "icon": "book-open",
         "title": "Accounting and Bookkeeping",
         "text": "Accurate, up to date books maintained under IFRS, giving you reliable figures for decisions and a smooth year end.",
-        "points": ["Monthly bookkeeping and reconciliations", "Management accounts and reporting", "Preparation of financial statements"]
+        "points": [
+          "Monthly bookkeeping and reconciliations",
+          "Management accounts and reporting",
+          "Preparation of financial statements"
+        ]
       },
       {
         "icon": "receipt",
         "title": "VAT Services",
         "text": "Registration, returns and advice on the VAT treatment of local, EU and international transactions.",
-        "points": ["VAT and VIES registration", "Quarterly VAT returns and OSS", "VAT reviews and refund claims"]
+        "points": [
+          "VAT and VIES registration",
+          "Quarterly VAT returns and OSS",
+          "VAT reviews and refund claims"
+        ]
       },
       {
         "icon": "users",
         "title": "Payroll Services",
         "text": "Confidential end to end payroll processing so your people are paid correctly and every contribution is filed on time.",
-        "points": ["Monthly payroll and payslips", "Social insurance and GESY filings", "Employment tax forms and registrations"]
+        "points": [
+          "Monthly payroll and payslips",
+          "Social insurance and GESY filings",
+          "Employment tax forms and registrations"
+        ]
       },
       {
         "icon": "building",
         "title": "Company Formation and Corporate Services",
         "text": "Incorporation and ongoing administration of Cyprus companies, including registered office and secretarial duties.",
-        "points": ["Company incorporation and bank introductions", "Registered office and company secretary", "Annual returns and Registrar filings"]
+        "points": [
+          "Company incorporation and bank introductions",
+          "Registered office and company secretary",
+          "Annual returns and Registrar filings"
+        ]
       },
       {
         "icon": "briefcase",
         "title": "Business Advisory",
         "text": "Practical financial advice for owners and boards, from cash flow planning to transactions and restructuring.",
-        "points": ["Budgets, forecasts and cash flow models", "Due diligence and valuations", "Restructuring and succession planning"]
+        "points": [
+          "Budgets, forecasts and cash flow models",
+          "Due diligence and valuations",
+          "Restructuring and succession planning"
+        ]
       },
       {
         "icon": "plane",
         "title": "Relocation and Non Dom Services",
         "text": "Support for individuals and companies moving to Cyprus, from tax residency to headquartering under the Business Facilitation Unit.",
-        "points": ["Tax residency and non dom status", "Foreign interest company registration", "Immigration and permit coordination"]
+        "points": [
+          "Tax residency and non dom status",
+          "Foreign interest company registration",
+          "Immigration and permit coordination"
+        ]
       }
     ],
     "cta": "Not sure which service you need?",
@@ -125,12 +184,30 @@
     "eyebrow": "Why Choose Us",
     "title": "The rigour of a large firm, the attention of a small one",
     "items": [
-      { "title": "Expert team with international experience", "text": "Our professionals have trained and worked with international clients and structures." },
-      { "title": "Comprehensive regulatory knowledge", "text": "We follow every change in Cyprus and EU tax and reporting rules so you do not have to." },
-      { "title": "Commitment to excellence and integrity", "text": "Every deliverable is reviewed at director level before it reaches you." },
-      { "title": "Tailored solutions for your business needs", "text": "No templates. Advice built around your structure, sector and plans." },
-      { "title": "Proactive and strategic approach", "text": "We flag opportunities and risks early, not after the deadline has passed." },
-      { "title": "Responsive and accessible service", "text": "Direct contact with the people who know your file, in English, Greek or Russian." }
+      {
+        "title": "Expert team with international experience",
+        "text": "Our professionals have trained and worked with international clients and structures."
+      },
+      {
+        "title": "Comprehensive regulatory knowledge",
+        "text": "We follow every change in Cyprus and EU tax and reporting rules so you do not have to."
+      },
+      {
+        "title": "Commitment to excellence and integrity",
+        "text": "Every deliverable is reviewed at director level before it reaches you."
+      },
+      {
+        "title": "Tailored solutions for your business needs",
+        "text": "No templates. Advice built around your structure, sector and plans."
+      },
+      {
+        "title": "Proactive and strategic approach",
+        "text": "We flag opportunities and risks early, not after the deadline has passed."
+      },
+      {
+        "title": "Responsive and accessible service",
+        "text": "Direct contact with the people who know your file, in English, Greek or Russian."
+      }
     ]
   },
   "whyCyprus": {
@@ -138,12 +215,30 @@
     "title": "An EU jurisdiction built for international business",
     "intro": "Cyprus combines a competitive and transparent tax system, a common law legal framework, full EU membership and a strategic location at the crossroads of three continents. Following the 2026 tax reform the system remains one of the most attractive in the European Union.",
     "figures": [
-      { "value": "15%", "label": "Corporate income tax, among the lowest in the EU" },
-      { "value": "0%", "label": "Withholding tax on outbound dividends, interest and royalties" },
-      { "value": "80%", "label": "IP Box exemption, an effective rate of around 3%" },
-      { "value": "17 yrs", "label": "Non dom status with no tax on dividends and interest" },
-      { "value": "65+", "label": "Double tax treaties in force" },
-      { "value": "2004", "label": "EU member state, eurozone since 2008" }
+      {
+        "value": "15%",
+        "label": "Corporate income tax, among the lowest in the EU"
+      },
+      {
+        "value": "0%",
+        "label": "Withholding tax on outbound dividends, interest and royalties"
+      },
+      {
+        "value": "80%",
+        "label": "IP Box exemption, an effective rate of around 3%"
+      },
+      {
+        "value": "17 yrs",
+        "label": "Non dom status with no tax on dividends and interest"
+      },
+      {
+        "value": "65+",
+        "label": "Double tax treaties in force"
+      },
+      {
+        "value": "2004",
+        "label": "EU member state, eurozone since 2008"
+      }
     ],
     "categories": [
       {
@@ -225,18 +320,34 @@
   "careers": {
     "eyebrow": "Careers",
     "title": "Build your career with us",
-    "intro": "We are always interested in hearing from talented professionals and graduates who share our commitment to quality and integrity. Whether you are a qualified auditor, a tax specialist or a trainee starting your ACA or ACCA journey, we would like to meet you.",
+    "intro": "We are always glad to hear from talented professionals and graduates, whether you are a qualified auditor, a tax specialist or a trainee starting your ACA or ACCA journey.",
     "perksTitle": "What we offer",
     "perks": [
-      { "title": "Professional development", "text": "Support for ACCA, ACA and ICPAC qualifications and continuous technical training." },
-      { "title": "Diverse client portfolio", "text": "Exposure to international groups, local businesses and private clients across sectors." },
-      { "title": "Direct mentoring", "text": "Work alongside our directors and learn from experienced professionals every day." },
-      { "title": "Balanced working environment", "text": "A close knit team in Larnaca that values quality of work and quality of life." }
+      {
+        "title": "Professional development",
+        "text": "Support for ACCA, ACA and ICPAC qualifications and continuous technical training."
+      },
+      {
+        "title": "Diverse client portfolio",
+        "text": "Exposure to international groups, local businesses and private clients across sectors."
+      },
+      {
+        "title": "Direct mentoring",
+        "text": "Work alongside our directors and learn from experienced professionals every day."
+      },
+      {
+        "title": "Balanced working environment",
+        "text": "A close knit team in Larnaca that values quality of work and quality of life."
+      }
     ],
-    "openingsTitle": "Areas we recruit for",
-    "openings": ["Audit and Assurance", "Tax Advisory and Compliance", "Accounting and Bookkeeping", "Trainee Accountants (ACA, ACCA)", "Administration and Client Support"],
+    "openings": [
+      "Audit and Assurance",
+      "Tax Advisory and Compliance",
+      "Accounting and Bookkeeping",
+      "Trainee Accountants (ACA, ACCA)",
+      "Administration and Client Support"
+    ],
     "formTitle": "Apply now",
-    "formIntro": "Complete the form and your email application will open with the details prefilled. Please attach your CV before sending.",
     "form": {
       "name": "Full name",
       "email": "Email address",
@@ -246,14 +357,13 @@
       "message": "Tell us about yourself",
       "messagePlaceholder": "Qualifications, experience and why you would like to join C. Anthouli Ltd",
       "submit": "Send application",
-      "note": "Your email application will open in your default email app. Attach your CV before sending.",
       "subject": "Job application"
     }
   },
   "contact": {
     "eyebrow": "Get in touch",
     "title": "Let us talk about your business",
-    "intro": "Tell us what you need and one of our directors will come back to you, usually within one working day.",
+    "intro": "Tell us what you need and one of our team will come back to you shortly.",
     "address": "Address",
     "addressValue": "G. Mathaiou Tower, 8 Piliou Street, 4th Floor, Office 401, 6037 Larnaca, Cyprus",
     "phone": "Phone",
@@ -267,29 +377,60 @@
       "name": "Your name",
       "phone": "Phone",
       "email": "Email",
-      "company": "Company (optional)",
+      "company": "Company",
       "service": "I am interested in",
       "servicePlaceholder": "Select a service",
       "message": "Your message",
       "submit": "Send message",
-      "note": "Your message will open in your default email app, ready to send.",
       "subject": "Enquiry from website"
     }
   },
   "footer": {
     "tagline": "Bespoke tax, audit and advisory services from Larnaca, Cyprus, for clients across the world.",
-    "quickLinks": "Quick links",
+    "quickLinks": "Explore",
     "servicesTitle": "Services",
     "contactTitle": "Contact",
     "rights": "All rights reserved.",
     "regulated": "Registered in Cyprus. Audit services provided by licensed auditors regulated by ICPAC.",
-    "privacy": "Privacy",
-    "top": "Back to top"
+    "privacy": "Privacy"
   },
   "lang": {
     "label": "Language",
     "en": "English",
     "el": "Ελληνικά",
     "ru": "Русский"
+  },
+  "home": {
+    "servicesEyebrow": "Our Services",
+    "servicesTitle": "What we do",
+    "servicesIntro": "Nine service lines covering tax, audit, accounting and advisory. Explore the full breakdown on our services page.",
+    "servicesButton": "See all services",
+    "aboutButton": "More about us"
+  },
+  "form": {
+    "required": "Required",
+    "optional": "Optional",
+    "sending": "Sending...",
+    "success": "Thank you. Your message has been sent and we will come back to you shortly.",
+    "successApply": "Thank you. Your application has been received and we will be in touch.",
+    "error": "Something went wrong and the message was not sent. Please try again or email us directly at {{email}}.",
+    "cv": "Upload your CV",
+    "cvHint": "PDF or Word, up to 5 MB",
+    "cvChosen": "Selected file",
+    "cvRemove": "Remove",
+    "cvRequired": "Please attach your CV before sending.",
+    "fixFields": "Please complete all required fields."
+  },
+  "link": {
+    "tagline": "Tax · Audit · Advisory",
+    "website": "Visit the website",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "email": "Email us",
+    "call": "Call us",
+    "directions": "Find our office",
+    "callOffice": "Office",
+    "callMobile": "Mobile",
+    "callChoose": "Choose a number"
   }
 }

@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Menu, X, Phone } from 'lucide-react'
 import LanguageSwitcher from './LanguageSwitcher'
-import { NAV_SECTIONS, SECTION_IDS, SITE } from '../data/site'
+import { NAV, SITE } from '../data/site'
 
 export default function Navbar() {
   const { t } = useTranslation()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-  const [active, setActive] = useState('')
+  const { pathname } = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -17,43 +18,33 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  useEffect(() => {
-    const sections = Object.values(SECTION_IDS).map((id) => document.getElementById(id)).filter(Boolean)
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.id) })
-      },
-      { rootMargin: '-45% 0px -50% 0px' },
-    )
-    sections.forEach((s) => io.observe(s))
-    return () => io.disconnect()
-  }, [])
+  useEffect(() => { setOpen(false) }, [pathname])
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [open])
 
-  const linkCls = (id) => `nav-link whitespace-nowrap ${active === id ? 'text-brand-700' : ''}`
+  const linkCls = ({ isActive }) => `nav-link whitespace-nowrap ${isActive ? 'text-brand-700' : ''}`
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled || open ? 'bg-white/95 shadow-[0_1px_0_rgba(0,0,0,0.06)] backdrop-blur' : 'bg-white/80 backdrop-blur-sm'}`}>
       <div className="container-x flex h-20 items-center justify-between gap-6">
-        <a href="#top" className="flex shrink-0 items-center" aria-label={SITE.name}>
+        <Link to="/" className="flex shrink-0 items-center" aria-label={SITE.name}>
           <img src="/logo.png" alt={SITE.name} className="h-10 w-auto sm:h-11" />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-5 xl:gap-7 lg:flex" aria-label="Main">
-          {NAV_SECTIONS.map((key) => (
-            <a key={key} href={`#${SECTION_IDS[key]}`} className={linkCls(SECTION_IDS[key])}>
-              {t(`nav.${key}`)}
-            </a>
+          {NAV.map((n) => (
+            <NavLink key={n.key} to={n.path} end={n.path === '/'} className={linkCls}>
+              {t(`nav.${n.key}`)}
+            </NavLink>
           ))}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
           <LanguageSwitcher />
-          <a href="#contact" className="btn-primary whitespace-nowrap !px-5 !py-2.5">{t('nav.cta')}</a>
+          <Link to="/contact" className="btn-primary whitespace-nowrap !px-5 !py-2.5">{t('nav.cta')}</Link>
         </div>
 
         <button
@@ -70,15 +61,15 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div className={`lg:hidden ${open ? 'block' : 'hidden'} border-t border-stone-100 bg-white`}>
         <div className="container-x flex flex-col gap-1 py-4">
-          {NAV_SECTIONS.map((key) => (
-            <a
-              key={key}
-              href={`#${SECTION_IDS[key]}`}
-              onClick={() => setOpen(false)}
-              className="rounded-xl px-3 py-3 text-base font-medium text-stone-800 hover:bg-brand-50 hover:text-brand-700"
+          {NAV.map((n) => (
+            <NavLink
+              key={n.key}
+              to={n.path}
+              end={n.path === '/'}
+              className={({ isActive }) => `rounded-xl px-3 py-3 text-base font-medium hover:bg-brand-50 hover:text-brand-700 ${isActive ? 'text-brand-700' : 'text-stone-800'}`}
             >
-              {t(`nav.${key}`)}
-            </a>
+              {t(`nav.${n.key}`)}
+            </NavLink>
           ))}
           <div className="mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-stone-100 pt-4">
             <LanguageSwitcher />

@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Check, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import SectionHeading from './SectionHeading'
 import Icon from './Icon'
 
@@ -37,9 +38,9 @@ export default function Services() {
 
         <div className="reveal mt-14 flex flex-col items-center justify-between gap-5 rounded-2xl bg-brand-500 px-8 py-8 text-white sm:flex-row">
           <p className="font-display text-xl font-semibold">{t('services.cta')}</p>
-          <a href="#contact" className="btn-light">
+          <Link to="/contact" className="btn-light">
             {t('services.ctaButton')} <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

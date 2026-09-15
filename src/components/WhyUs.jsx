@@ -7,7 +7,7 @@ export default function WhyUs() {
   const items = t('whyUs.items')
 
   return (
-    <section id="why-us" className="section bg-white">
+    <section id="why-us" className="section">
       <div className="container-x">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
