@@ -58,6 +58,15 @@ export default function Footer() {
             <p>© {year} {SITE.name}. {t('footer.rights')}</p>
             <p className="mt-1">{t('footer.regulated')}</p>
           </div>
+          <a
+            href="https://ergonsite.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="group mt-6 flex items-center justify-center gap-2 text-xs text-stone-500 transition-colors hover:text-stone-300"
+          >
+            <span>Developed &amp; Designed by</span>
+            <img src="/img/ergonsite.png" alt="ErgonSite" className="h-5 w-auto transition-transform duration-300 group-hover:scale-105" />
+          </a>
         </div>
       </div>
     </footer>
