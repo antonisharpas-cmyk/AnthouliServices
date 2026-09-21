@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Check, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import SectionHeading from './SectionHeading'
 import Icon from './Icon'
 import CountUp from './CountUp'
 
@@ -14,17 +13,57 @@ export default function WhyCyprus() {
   const active = Array.isArray(categories) ? categories[activeIdx] || categories[0] : null
 
   return (
-    <section id="why-cyprus" className="relative overflow-hidden bg-brand-900 pt-36 pb-20 text-white lg:pt-44 lg:pb-28">
-      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute -right-24 top-10 h-[36rem] w-[36rem] rounded-full bg-brand-700/40 blur-3xl" />
-        <div className="absolute -left-32 bottom-0 h-[28rem] w-[28rem] rounded-full bg-brand-500/20 blur-3xl" />
-      </div>
+    <>
+      {/* the picture as the whole background of the band, below the header so the wording is never clipped */}
+      <section id="why-cyprus" className="relative isolate h-[calc(100vw+6rem)] overflow-hidden bg-brand-950 sm:h-[100vh] sm:max-h-[calc(100vw+6rem)] sm:min-h-[560px]">
+        <img
+          src="/img/why-cyprus.jpg"
+          alt="The flags of the European Union and Cyprus"
+          className="absolute inset-x-0 top-24 -z-10 h-[calc(100%-6rem)] w-full object-cover object-center"
+        />
+      </section>
+
+      {/* the heading, on white */}
+      <section className="relative overflow-hidden bg-white py-20 lg:py-28">
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+          <div className="absolute -left-40 -top-40 h-[30rem] w-[30rem] rounded-full bg-brand-50 blur-3xl" />
+          <div className="absolute -right-40 bottom-[-12rem] h-[26rem] w-[26rem] rounded-full bg-brand-50 blur-3xl" />
+          <img src="/logo-mark.png" alt="" className="absolute left-1/2 top-1/2 w-[32rem] -translate-x-1/2 -translate-y-1/2 opacity-[0.035]" />
+        </div>
+
+        <div className="container-x relative">
+          <div className="reveal mx-auto max-w-4xl text-center">
+            <span className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-brand-600">
+              <span className="block h-px w-10 bg-brand-400" />
+              {t('whyCyprus.eyebrow')}
+              <span className="block h-px w-10 bg-brand-400" />
+            </span>
+
+            <h2 className="mt-7 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-stone-900 sm:text-5xl lg:text-6xl">
+              {String(t('whyCyprus.title')).split(' ').map((w, i) => (
+                <span key={i}><span className="word-wrap"><span className="word" style={{ animationDelay: `${120 + i * 55}ms` }}>{w}</span></span>{' '}</span>
+              ))}
+            </h2>
+
+            <span className="mx-auto mt-9 block h-1 w-24 rounded-full bg-gradient-to-r from-brand-300 via-brand-500 to-brand-700 animate-fadeUp [animation-delay:520ms]" />
+
+            <p className="mx-auto mt-9 max-w-3xl text-lg leading-relaxed text-stone-600 sm:text-xl animate-fadeUp [animation-delay:600ms]">
+              {t('whyCyprus.intro')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* figures and the category detail, on the brand green */}
+      <section className="relative overflow-hidden bg-brand-900 py-16 text-white lg:py-20">
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+          <div className="absolute -right-24 top-10 h-[36rem] w-[36rem] rounded-full bg-brand-700/40 blur-3xl" />
+          <div className="absolute -left-32 bottom-0 h-[28rem] w-[28rem] rounded-full bg-brand-500/20 blur-3xl" />
+        </div>
 
       <div className="container-x relative">
-        <SectionHeading eyebrow={t('whyCyprus.eyebrow')} title={t('whyCyprus.title')} intro={t('whyCyprus.intro')} light words />
-
         {/* key figures */}
-        <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
           {Array.isArray(figures) && figures.map((f, i) => (
             <div key={f.label} className="reveal rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm" style={{ transitionDelay: `${i * 50}ms` }}>
               <div className="font-display text-3xl font-semibold text-brand-200"><CountUp value={f.value} /></div>
@@ -129,6 +168,7 @@ export default function WhyCyprus() {
           </Link>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   )
 }

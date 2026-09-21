@@ -49,7 +49,7 @@ export default function Services() {
 
   return (
     <>
-      <PageHero eyebrow={t('services.eyebrow')} title={t('services.title')} intro={t('services.intro')} />
+      <PageHero eyebrow={t('services.eyebrow')} title={t('services.title')} intro={t('services.intro')} image="/img/services-hero.jpg" />
       <section id="services" className="section bg-[#f6f6f6]">
         <div className="container-x">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

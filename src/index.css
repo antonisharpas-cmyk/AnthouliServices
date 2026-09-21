@@ -36,7 +36,7 @@
 @keyframes aurora { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(6%, -8%) scale(1.15); } }
 @keyframes aurora2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-8%, 6%) scale(1.1); } }
 @keyframes aurora3 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(4%, -10%) scale(1.2); } }
-@keyframes kenburns { 0% { transform: scale(1.05) translate(0,0); } 100% { transform: scale(1.15) translate(-1.5%, -1%); } }
+@keyframes kenburns { 0% { transform: scale(1); } 100% { transform: scale(1.06); } }
 @keyframes gridDrift { 0% { background-position: 0 0; } 100% { background-position: 72px 72px; } }
 .aurora { animation: aurora 18s ease-in-out infinite; }
 .aurora-2 { animation: aurora2 22s ease-in-out infinite; }
@@ -70,13 +70,14 @@
 .ring-glow::before { content: ''; position: absolute; inset: -1px; border-radius: inherit; padding: 1px; background: linear-gradient(135deg, #b4c2a2, #688948 40%, transparent 70%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity .4s ease; }
 .ring-glow:hover::before { opacity: 1; }
 
-/* Map clip reveal */
-.clip-reveal { clip-path: inset(0 0 100% 0 round 1.5rem); transition: clip-path 1.1s cubic-bezier(.2,.7,.2,1); }
-.clip-reveal.is-visible { clip-path: inset(0 0 0 0 round 1.5rem); }
+/* Curtain reveal. The clip lives on the children so the wrapper itself stays
+   measurable for IntersectionObserver (a fully clipped box never reports as visible). */
+.clip-reveal > * { clip-path: inset(0 0 100% 0); transition: clip-path 1.1s cubic-bezier(.2,.7,.2,1); }
+.clip-reveal.is-visible > * { clip-path: inset(0 0 0 0); }
 
 @media (prefers-reduced-motion: reduce) {
   .tilt { transform: none !important; }
   .word { transform: none; animation: none; }
   .marquee, .animate-floatY { animation: none; }
-  .clip-reveal { clip-path: none; transition: none; }
+  .clip-reveal > * { clip-path: none; transition: none; }
 }

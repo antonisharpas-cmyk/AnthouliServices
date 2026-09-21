@@ -44,13 +44,15 @@ function Tile({ s, i }) {
 
 export default function ServicesOverview() {
   const { t } = useTranslation()
-  const items = t('services.items')
+  const all = t('services.items')
+  // the home page shows the three core services only
+  const items = Array.isArray(all) ? all.slice(0, 3) : []
   return (
     <section className="section bg-[#f6f6f6]">
       <div className="container-x">
         <SectionHeading eyebrow={t('home.servicesEyebrow')} title={t('home.servicesTitle')} intro={t('home.servicesIntro')} />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.isArray(items) && items.map((s, i) => <Tile key={s.title} s={s} i={i} />)}
+          {items.map((s, i) => <Tile key={s.title} s={s} i={i} />)}
         </div>
         <div className="reveal mt-12 text-center">
           <Link to="/services" className="btn-primary">{t('home.servicesButton')} <ArrowRight className="h-4 w-4" /></Link>

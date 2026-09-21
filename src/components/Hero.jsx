@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import CountUp from './CountUp'
 
 // Optional media: drop /public/media/hero.mp4 (and /public/img/hero.jpg as poster) to get a video hero.
 // When neither exists the animated green background is shown instead.
@@ -11,7 +10,6 @@ const POSTER_SRC = '/img/hero.jpg'
 
 export default function Hero() {
   const { t } = useTranslation()
-  const stats = t('hero.stats')
   const [video, setVideo] = useState(true)
   const [poster, setPoster] = useState(true)
   const [offset, setOffset] = useState(0)
@@ -30,7 +28,16 @@ export default function Hero() {
       {/* media layer */}
       <div className="absolute inset-0 -z-10" aria-hidden="true" style={{ transform: `translateY(${offset * 0.25}px)` }}>
         {poster && (
-          <img src={POSTER_SRC} alt="" onError={() => setPoster(false)} className="h-full w-full scale-105 object-cover animate-kenburns" />
+          <picture className="block h-full w-full">
+            {/* portrait framing for phones so she is never cropped at the edge */}
+            <source media="(max-width: 639px)" srcSet="/img/hero-mobile.jpg" />
+            <img
+              src={POSTER_SRC}
+              alt=""
+              onError={() => setPoster(false)}
+              className="h-full w-full object-cover object-center sm:object-[68%_top] lg:object-[65%_top] animate-kenburns"
+            />
+          </picture>
         )}
         {video && (
           <video
@@ -56,10 +63,11 @@ export default function Hero() {
           />
         </div>
         {/* darkening overlay so text stays readable over video or image */}
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-950/70 via-brand-950/40 to-brand-950/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-950/90 via-brand-950/60 to-brand-950/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-transparent to-brand-950/45" />
       </div>
 
-      <div className="container-x relative pt-36 pb-16 lg:pt-48 lg:pb-24">
+      <div className="container-x relative flex min-h-[86vh] items-center pt-36 pb-24 lg:min-h-[92vh] lg:pt-44 lg:pb-32">
         <div className="max-w-3xl">
           <span className="eyebrow text-brand-200 animate-fadeUp">{t('hero.eyebrow')}</span>
           <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl xl:text-[5.5rem] animate-fadeUp [animation-delay:80ms]">
@@ -77,16 +85,6 @@ export default function Hero() {
             <Link to="/contact" className="btn border border-white/30 text-white hover:border-white hover:bg-white/10">{t('hero.ctaSecondary')}</Link>
           </div>
         </div>
-
-        {/* stat strip with counting numbers */}
-        <dl className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 backdrop-blur md:grid-cols-4 animate-fadeUp [animation-delay:360ms]">
-          {Array.isArray(stats) && stats.map((s) => (
-            <div key={s.label} className="bg-brand-950/40 px-6 py-6">
-              <dd className="font-display text-3xl font-semibold text-white lg:text-4xl"><CountUp value={s.value} /></dd>
-              <dt className="mt-1 text-sm text-brand-100/80">{s.label}</dt>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   )

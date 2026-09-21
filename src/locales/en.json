@@ -10,8 +10,8 @@
     "whyUs": "Why Us",
     "whyCyprus": "Why Cyprus",
     "careers": "Join Us",
-    "contact": "Contact",
-    "cta": "Book a consultation",
+    "contact": "Contact Us",
+    "cta": "Request a Consultation",
     "menu": "Menu",
     "close": "Close"
   },
@@ -21,7 +21,7 @@
     "title2": "Numbers",
     "subtitle": "Bespoke assurance, tax advisory and tax compliance services for national and international corporations.",
     "ctaPrimary": "Explore our services",
-    "ctaSecondary": "Talk to us",
+    "ctaSecondary": "Request a Consultation",
     "stats": [
       {
         "value": "15%",
@@ -76,7 +76,7 @@
       {
         "name": "Gabriel Anthoulis",
         "role": "Audit and Assurance Director",
-        "bio": "Directing comprehensive audit and assurance services with a focus on financial reporting, risk management and stakeholder confidence."
+        "bio": "Gabriel Anthoulis is a Chartered Certified Accountant (ACCA) and Senior Auditor at C. Anthouli Ltd, providing audit and assurance services across diverse industries. He previously worked at Deloitte as an Audit and Assurance Senior and Assistant, gaining over three years of experience and exposure to international standards and professional audit methodologies. He holds a First Class BSc in Accounting from the University of Westminster, where he received the Excellence and Employability Awards."
       }
     ],
     "teamNote": "Interested in joining the team? Visit our careers section."
@@ -182,7 +182,7 @@
   },
   "whyUs": {
     "eyebrow": "Why Choose Us",
-    "title": "The rigour of a large firm, the attention of a small one",
+    "title": "Senior people on every file, from the first call to the final signature",
     "items": [
       {
         "title": "Expert team with international experience",
@@ -362,8 +362,7 @@
   },
   "contact": {
     "eyebrow": "Get in touch",
-    "title": "Let us talk about your business",
-    "intro": "Tell us what you need and one of our team will come back to you shortly.",
+    "title": "Let's start a conversation",
     "address": "Address",
     "addressValue": "G. Mathaiou Tower, 8 Piliou Street, 4th Floor, Office 401, 6037 Larnaca, Cyprus",
     "phone": "Phone",
@@ -403,7 +402,7 @@
   "home": {
     "servicesEyebrow": "Our Services",
     "servicesTitle": "What we do",
-    "servicesIntro": "Nine service lines covering tax, audit, accounting and advisory. Explore the full breakdown on our services page.",
+    "servicesIntro": "Our three core service lines, part of a wider range covering tax, audit, accounting and advisory. See all nine on our services page.",
     "servicesButton": "See all services",
     "aboutButton": "More about us"
   },

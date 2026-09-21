@@ -7,7 +7,7 @@ import FormStatus from './FormStatus'
 import { postForm, isEmail, isPhone } from '../lib/api'
 import { SITE } from '../data/site'
 
-export default function ContactForm() {
+export default function ContactForm({ className = 'reveal rounded-3xl border border-stone-200/80 bg-white p-7 shadow-card sm:p-9' }) {
   const { t, i18n } = useTranslation()
   const services = t('services.items')
   const options = Array.isArray(services) ? services.map((s) => s.title) : []
@@ -44,7 +44,7 @@ export default function ContactForm() {
   const complete = form.name.trim() && isEmail(form.email) && isPhone(form.phone) && form.message.trim()
 
   return (
-    <form onSubmit={submit} noValidate className="reveal order-1 rounded-3xl border border-stone-200/80 bg-white p-7 shadow-card sm:p-9 lg:order-2 lg:col-span-7">
+    <form onSubmit={submit} noValidate className={className}>
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label={t('contact.form.name')} required error={errors.name}>
           <input className={`input ${errors.name ? 'border-red-400' : ''}`} value={form.name} onChange={update('name')} autoComplete="name" />
