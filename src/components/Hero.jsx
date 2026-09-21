@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <section id="top" className="relative isolate overflow-hidden bg-brand-950 text-white">
       {/* media layer */}
-      <div className="absolute inset-0 -z-10" aria-hidden="true" style={{ transform: `translateY(${offset * 0.25}px)` }}>
+      <div className="absolute inset-x-0 bottom-0 top-20 -z-10 sm:top-0" aria-hidden="true" style={{ transform: `translateY(${offset * 0.25}px)` }}>
         {poster && (
           <picture className="block h-full w-full">
             {/* portrait framing for phones so she is never cropped at the edge */}
@@ -63,11 +63,11 @@ export default function Hero() {
           />
         </div>
         {/* darkening overlay so text stays readable over video or image */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-950/90 via-brand-950/60 to-brand-950/25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-transparent to-brand-950/45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-950/85 via-brand-950/45 to-brand-950/20 sm:from-brand-950/90 sm:via-brand-950/60 sm:to-brand-950/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-transparent to-brand-950/15 sm:to-brand-950/45" />
       </div>
 
-      <div className="container-x relative flex min-h-[86vh] items-center pt-36 pb-24 lg:min-h-[92vh] lg:pt-44 lg:pb-32">
+      <div className="container-x relative flex min-h-[78vh] items-center pt-32 pb-20 sm:min-h-[86vh] sm:pt-36 sm:pb-24 lg:min-h-[92vh] lg:pt-44 lg:pb-32">
         <div className="max-w-3xl">
           <span className="eyebrow text-brand-200 animate-fadeUp">{t('hero.eyebrow')}</span>
           <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl xl:text-[5.5rem] animate-fadeUp [animation-delay:80ms]">
